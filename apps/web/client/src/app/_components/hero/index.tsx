@@ -6,6 +6,7 @@ import { vujahdayScript } from '../../fonts';
 import { Create } from './create';
 import { CreateError } from './create-error';
 import { HighDemand } from './high-demand';
+import { ImageCarousel } from './image-carousel';
 import { UnicornBackground } from './unicorn-background';
 
 export function Hero() {
@@ -13,7 +14,7 @@ export function Hero() {
     const [cardKey, setCardKey] = useState(0);
 
     return (
-        <div className="w-full h-full flex flex-col items-center justify-center gap-12 p-8 text-lg text-center relative">
+        <div className="w-full flex flex-col items-center justify-center gap-8 p-8 text-lg text-center relative">
             <UnicornBackground setIsMounted={setIsMounted} />
             <div className="flex flex-col gap-3 items-center relative z-20 pt-4 pb-2">
                 <motion.h1
@@ -41,7 +42,16 @@ export function Hero() {
                 <HighDemand isMounted={isMounted} />
                 <CreateError />
             </div>
-            <div className="sm:flex hidden flex-col gap-4 items-center relative z-20">
+            {/* Image Carousel */}
+            <motion.div
+                className="w-full px-8 relative z-20"
+                initial={{ opacity: 0, y: 20 }}
+                animate={isMounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.6, delay: 0.25, ease: "easeOut" }}
+            >
+                <ImageCarousel />
+            </motion.div>
+            <div className="sm:flex hidden flex-col gap-4 items-center relative z-20 mt-4">
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={isMounted ? { opacity: 1 } : { opacity: 0 }}

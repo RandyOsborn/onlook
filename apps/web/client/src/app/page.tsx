@@ -13,7 +13,7 @@ export default function Main() {
             <div className="fixed top-0 left-0 w-full h-12 bg-background/80 backdrop-blur-sm z-50">
                 <TopBar />
             </div>
-            <div className="w-screen h-screen flex items-center justify-center">
+            <div className="w-screen min-h-screen flex items-center justify-center pt-24 pb-12 bg-black">
                 <Hero />
             </div>
 
