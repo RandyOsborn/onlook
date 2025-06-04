@@ -30,7 +30,7 @@ export function ImageCarousel() {
 
     const [emblaRef, emblaApi] = useEmblaCarousel({
         axis: 'x',
-        loop: false,
+        loop: true,
         align: 'center',
         containScroll: 'trimSnaps',
         skipSnaps: false,
@@ -131,7 +131,7 @@ export function ImageCarousel() {
 
             {/* Image caption */}
             <p className="text-center text-sm text-foreground-secondary mt-3">
-                {placeholderImages[currentIndex].alt}
+                {placeholderImages[currentIndex]?.alt}
             </p>
         </div>
     );
